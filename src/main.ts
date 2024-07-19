@@ -12,7 +12,7 @@ const main =()=>{
     const house1 = new House("jabryatHouse","jenin",200,"saleem omari",6)
 
     //create paymentMethods
-    const paypal = new PayPal("john.doe@example.com");
+    const paypal = new PayPal("osama.zak@example.com");
     const visa = new VisaCard(4111111111111111);
     const mastercard = new MasterCard("5500 0000 0000 0004");
 
