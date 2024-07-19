@@ -18,7 +18,6 @@ abstract class Building {
     }
     rent(newOwner: string): void {
         this.owner = newOwner; // Update the current owner to the new owner
-        console.log(`${this.name} is now rented by ${newOwner}`);
     }
 }
 export { Building };

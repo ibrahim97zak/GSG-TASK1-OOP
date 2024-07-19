@@ -16,7 +16,6 @@ class Building {
     }
     rent(newOwner) {
         this.owner = newOwner; // Update the current owner to the new owner
-        console.log(`${this.name} is now rented by ${newOwner}`);
     }
 }
 exports.Building = Building;

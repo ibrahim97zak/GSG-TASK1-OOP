@@ -9,7 +9,7 @@ const VisaCard_1 = require("./PaymentMethod/VisaCard");
 const PayPal_1 = require("./PaymentMethod/PayPal");
 const main = () => {
     //create builldings 
-    const apart1 = new Apartment_1.Apartment("jenin", "ErsalApartment", 160, "ibrahim zakarned", 2);
+    const apart1 = new Apartment_1.Apartment("jenin", "ErsalApartment", 160, "ibrahim zakarneh", 2);
     const shopHouse = new Shope_1.Shope("jenin-palStr", "allessandraStore", 80, "aziz hamdan", "clothing");
     const house1 = new House_1.House("jabryatHouse", "jenin", 200, "saleem omari", 6);
     //create paymentMethods
@@ -17,7 +17,7 @@ const main = () => {
     const visa = new VisaCard_1.VisaCard(4111111111111111);
     const mastercard = new MasterCard_1.MasterCard("5500 0000 0000 0004");
     //create customers
-    const customer1 = new Customer_1.Customer("osama zakarned", +970599887765, [visa, mastercard]);
+    const customer1 = new Customer_1.Customer("osama zakarneh", +970599887765, [visa, mastercard]);
     //customer rent buildings 
     customer1.rentBuilding(apart1, 12, 1500, paypal);
     customer1.rentBuilding(shopHouse, 12, 2000, visa);
