@@ -23,8 +23,9 @@ const main = () => {
     customer1.rentBuilding(shopHouse, 12, 2000, visa);
     customer1.getInfo();
     //// Display updated ownership and contracts
-    // apart1.getOwner()
-    // shopHouse.getOwner()
+    apart1.getOwner();
+    shopHouse.getOwner();
+    apart1.displayInfo();
     customer1.displayContracts();
 };
 //to run the app write npm run dev in the terminal

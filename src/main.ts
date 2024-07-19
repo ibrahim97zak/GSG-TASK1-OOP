@@ -26,6 +26,7 @@ const main =()=>{
     //// Display updated ownership and contracts
     apart1.getOwner()
     shopHouse.getOwner()
+    apart1.displayInfo()
     customer1.displayContracts();
 
 }

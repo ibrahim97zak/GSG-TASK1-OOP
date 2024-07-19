@@ -1,12 +1,11 @@
 abstract class Building {
-    private currentOwner: string;
     constructor(
         protected address: string,
         protected name: string,
         protected size: number,
-        protected initialOwner: string  
+        protected owner: string  
     ) {
-        this.currentOwner = initialOwner;
+
     }
 
     abstract displayInfo(): void;
@@ -15,10 +14,10 @@ abstract class Building {
         return this.name;
     }
     getOwner(): string {
-        return this.initialOwner;
+        return this.owner;
     }
     rent(newOwner: string): void {
-        this.currentOwner = newOwner; // Update the current owner to the new owner
+        this.owner = newOwner; // Update the current owner to the new owner
         console.log(`${this.name} is now rented by ${newOwner}`);
     }
 }

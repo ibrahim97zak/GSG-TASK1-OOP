@@ -10,10 +10,11 @@ class Customer {
         this.paymentMethods = paymentMethods;
     }
     rentBuilding(building, rentalPeriod, price, paymentMethod) {
+        const previousOwner = building.getOwner(); // Capture the previous owner
         const contract = new Contract_1.Contract(this, building, rentalPeriod, price, paymentMethod);
         building.rent(this.name);
         this.contracts.push(contract);
-        console.log(`${this.name} has rented ${building.getName()} from ${building.getOwner()}`);
+        console.log(`${this.name} has rented ${building.getName()} from ${previousOwner}`);
     }
     displayContracts() {
         this.contracts.forEach(contract => contract.displayContract());
