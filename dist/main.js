@@ -13,7 +13,7 @@ const main = () => {
     const shopHouse = new Shope_1.Shope("jenin-palStr", "allessandraStore", 80, "aziz hamdan", "clothing");
     const house1 = new House_1.House("jabryatHouse", "jenin", 200, "saleem omari", 6);
     //create paymentMethods
-    const paypal = new PayPal_1.PayPal("john.doe@example.com");
+    const paypal = new PayPal_1.PayPal("osama.zak@example.com");
     const visa = new VisaCard_1.VisaCard(4111111111111111);
     const mastercard = new MasterCard_1.MasterCard("5500 0000 0000 0004");
     //create customers
@@ -21,9 +21,10 @@ const main = () => {
     //customer rent buildings 
     customer1.rentBuilding(apart1, 12, 1500, paypal);
     customer1.rentBuilding(shopHouse, 12, 2000, visa);
+    customer1.getInfo();
     //// Display updated ownership and contracts
-    apart1.getOwner();
-    shopHouse.getOwner();
+    // apart1.getOwner()
+    // shopHouse.getOwner()
     customer1.displayContracts();
 };
 //to run the app write npm run dev in the terminal

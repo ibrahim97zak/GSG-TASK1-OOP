@@ -10,7 +10,7 @@ class Customer {
         this.paymentMethods = paymentMethods;
     }
     rentBuilding(building, rentalPeriod, price, paymentMethod) {
-        const contract = new Contract_1.Contract(this.name, building.getName(), rentalPeriod, price, paymentMethod);
+        const contract = new Contract_1.Contract(this, building, rentalPeriod, price, paymentMethod);
         building.rent(this.name);
         this.contracts.push(contract);
         console.log(`${this.name} has rented ${building.getName()} from ${building.getOwner()}`);
@@ -25,6 +25,9 @@ class Customer {
         console.log(`Customer Name: ${this.name}`);
         console.log(`Payment Methods:`);
         this.paymentMethods.forEach(method => console.log(` - ${method.getType()}`));
+    }
+    getName() {
+        return this.name;
     }
 }
 exports.Customer = Customer;

@@ -21,6 +21,7 @@ const main =()=>{
     //customer rent buildings 
     customer1.rentBuilding(apart1,12,1500,paypal)
     customer1.rentBuilding(shopHouse,12,2000,visa)
+    customer1.getInfo()
 
     //// Display updated ownership and contracts
     apart1.getOwner()
