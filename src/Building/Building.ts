@@ -1,9 +1,11 @@
+import { Owner } from "../Owner";
+
 abstract class Building {
     constructor(
         protected address: string,
         protected name: string,
         protected size: number,
-        protected owner: string  
+        protected owner: Owner  
     ) {
 
     }
@@ -14,10 +16,10 @@ abstract class Building {
         return this.name;
     }
     getOwner(): string {
-        return this.owner;
+        return this.owner.getName();
     }
     rent(newOwner: string): void {
-        this.owner = newOwner; // Update the current owner to the new owner
+        this.owner = new Owner(newOwner, ''); // Update the current owner to the new owner
     }
 }
 export { Building };

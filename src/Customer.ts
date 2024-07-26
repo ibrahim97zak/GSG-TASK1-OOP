@@ -1,37 +1,46 @@
-import { Building } from "./Building/Building";
-import { Contract } from "./Contract";
-import { PaymentMethod } from "./PaymentMethod/PaymenthMethod";
+// Customer.ts
+import { Person } from './Person';
+import { Building } from './Building/Building';
+import { Contract } from './Contract';
+import { PaymentMethod } from './PaymentMethod/PaymenthMethod';
 
-class Customer{
-    private contracts:Contract[]=[];
+
+class Customer extends Person {
+    private contracts: Contract[] = [];
     private paymentMethods: PaymentMethod[];
-    constructor(
-        private name:string,
-        private phoneNumber:number,
-        paymentMethods: PaymentMethod[]
-    ){
+
+    constructor(name: string, contactInfo: string, paymentMethods: PaymentMethod[]) {
+        super(name, contactInfo);
         this.paymentMethods = paymentMethods;
     }
+
     rentBuilding(building: Building, rentalPeriod: number, price: number, paymentMethod: PaymentMethod): void {
-        const previousOwner = building.getOwner(); // Capture the previous owner
+        const previousOwner = building.getOwner();
         const contract = new Contract(this, building, rentalPeriod, price, paymentMethod);
         building.rent(this.name);
         this.contracts.push(contract);
         console.log(`${this.name} has rented ${building.getName()} from ${previousOwner}`);
+        contract.processPayment();
     }
-    displayContracts():void {
-        this.contracts.forEach(contract => contract.displayContract())
+
+    displayContracts(): void {
+        if (this.contracts.length === 0) {
+            console.log(`${this.name} has no contracts.`);
+        } else {
+            console.log(`${this.name}'s Contracts:`);
+            this.contracts.forEach(contract => contract.displayContract());
+        }
     }
-    makePayments(): void {
-        this.contracts.forEach(contract => contract.processPayment());
-    }
-    getInfo(): void {
+
+    displayInfo(): void {
         console.log(`Customer Name: ${this.name}`);
         console.log(`Payment Methods:`);
         this.paymentMethods.forEach(method => console.log(` - ${method.getType()}`));
     }
-    getName(): string {
-        return this.name;
+
+    getPaymentMethods(): PaymentMethod[] {
+        return this.paymentMethods;
     }
 }
-export {Customer}
+
+export { Customer };

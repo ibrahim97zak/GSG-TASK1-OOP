@@ -1,3 +1,4 @@
+import { Owner } from "../Owner";
 import { Building } from "./Building";
 
 class Apartment extends Building {
@@ -5,7 +6,7 @@ class Apartment extends Building {
         address: string,
         name: string,
         size: number,
-        owner: string,
+        owner: Owner,
         private floorNumber: number,
     ) {
         super(address,name,size,owner)

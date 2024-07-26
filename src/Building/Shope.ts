@@ -1,3 +1,4 @@
+import { Owner } from "../Owner";
 import { Building } from "./Building";
 
 class Shope extends Building {
@@ -5,7 +6,7 @@ class Shope extends Building {
         address :string,
         name :string,
         size:number,
-        owner: string,
+        owner: Owner,
         private shopType:string,
     ){
         super(address,name,size,owner);
